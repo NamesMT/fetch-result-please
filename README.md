@@ -1,13 +1,13 @@
 <div align="center">
 
-<h1>Starter TS</h1>
+<h1>Fetch Result Please!</h1>
 
-<h3>I love TypeScript!</h3>
+<h3><code>const result = await fetchRP(api.$fetch())</code></h3>
 <img src="./branding.svg" alt="Project's branding image" width="320"/>
 
 </div>
 
-# starter-ts ![TypeScript heart icon](https://img.shields.io/badge/♡-%23007ACC.svg?logo=typescript&logoColor=white)
+# fetch-result-please ![TypeScript heart icon](https://img.shields.io/badge/♡-%23007ACC.svg?logo=typescript&logoColor=white)
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -15,41 +15,25 @@
 [![Bundlejs][bundlejs-src]][bundlejs-href]
 [![TypeDoc][TypeDoc-src]][TypeDoc-href]
 
-* [starter-ts ](#starter-ts-)
-  * [Notes (remove this section when you use the template)](#notes-remove-this-section-when-you-use-the-template)
-    * [\* Do a global replace for `starter-ts` and `NamesMT`](#-do-a-global-replace-for-starter-ts-and-namesmt)
-    * [\* Notable behaviors:](#-notable-behaviors)
+* [fetch-result-please ](#fetch-result-please-)
   * [Overview](#overview)
   * [Features](#features)
   * [Usage](#usage)
     * [Install package](#install-package)
     * [Import and use](#import-and-use)
-  * [Roadmap](#roadmap)
+  * [Credits](#credits)
   * [License](#license)
-
-## Notes (remove this section when you use the template)
-
-### * Do a global replace for `starter-ts` and `NamesMT`
-
-### * Notable behaviors:
-
-- [antfu/eslint-config](https://github.com/antfu/eslint-config)
-  - Style error silencing is commented out
 
 ## Overview
 
-**starter-ts** is my starter/boilerplate for typescript projects.
-This template assumes you are using Linux, or the included Dev Container.
+**fetch-result-please** helps you get a consumable result from a fetch call with a helper, and a few other features :) (feel free raise requests).
+
+Note: `fetch-result-please` focuses on being a minimal, helper function that you can just add-in to your existing fetch calls, if you're building things from scratch, it is recommended that you check out and use a proper custom fetch implementation like [`ofetch`](https://github.com/unjs/ofetch), [`ky`](https://github.com/sindresorhus/ky), [`up-fetch`](https://github.com/L-Blondy/up-fetch), etc.
 
 ## Features
 
-+ 👌 TypeScript
-+ 🧐 ESLint + stylistic formatting rules ([antfu](https://github.com/antfu/eslint-config))
-+ 💯 Vitest
-+ 📦 [obuild](https://github.com/unjs/obuild)
-+ 📚 A few more goodies like:
-  + [changelogen](https://github.com/unjs/changelogen) release script
-  + [lint-staged](https://github.com/lint-staged/lint-staged) pre-commit hook
++ 👌 Smartly parses and return the consumable result from a fetch `Response`.
++ 🧐 *Submit your feature requests, I'll take a look if it fits the scope*
 
 ## Usage
 
@@ -57,27 +41,32 @@ This template assumes you are using Linux, or the included Dev Container.
 
 ```sh
 # npm
-npm install starter-ts
+npm install fetch-result-please
 
 # bun
-bun add starter-ts
+bun add fetch-result-please
 
 # pnpm
-pnpm install starter-ts
+pnpm install fetch-result-please
 ```
 
 ### Import and use
 
 ```ts
 // ESM
-import { hello } from 'starter-ts'
+import { fetchRP } from 'fetch-result-please'
 
-hello('world')
+const fetchTodo = () => fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+const result: { id: number } = await fetchRP(fetchTodo())
+
+// To force a specific response type, pass in `detectResponseType`:
+const blobResult: Blob = await fetchRP(fetchTodo(), { detectResponseType: () => 'blob' })
 ```
 
-## Roadmap
+## Credits
 
-- [ ] Become the legendary 10000x developer
+Codes are borrowed from [unjs/ofetch](https://github.com/unjs/ofetch), I highly recommend you to try use it first if it's viable for your usecase, `fetch-result-please` focuses more to enhance your existing fetch calls fast, especially in cases where it's wonky or not possible to use a custom fetch implementation directly.
 
 ## License
 
@@ -85,17 +74,17 @@ hello('world')
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/starter-ts?labelColor=18181B&color=F0DB4F
-[npm-version-href]: https://npmjs.com/package/starter-ts
-[npm-downloads-src]: https://img.shields.io/npm/dm/starter-ts?labelColor=18181B&color=F0DB4F
-[npm-downloads-href]: https://npmjs.com/package/starter-ts
-[codecov-src]: https://img.shields.io/codecov/c/gh/namesmt/starter-ts/main?labelColor=18181B&color=F0DB4F
-[codecov-href]: https://codecov.io/gh/namesmt/starter-ts
-[license-src]: https://img.shields.io/github/license/namesmt/starter-ts.svg?labelColor=18181B&color=F0DB4F
-[license-href]: https://github.com/namesmt/starter-ts/blob/main/LICENSE
-[bundlejs-src]: https://img.shields.io/bundlejs/size/starter-ts?labelColor=18181B&color=F0DB4F
-[bundlejs-href]: https://bundlejs.com/?q=starter-ts
+[npm-version-src]: https://img.shields.io/npm/v/fetch-result-please?labelColor=18181B&color=F0DB4F
+[npm-version-href]: https://npmjs.com/package/fetch-result-please
+[npm-downloads-src]: https://img.shields.io/npm/dm/fetch-result-please?labelColor=18181B&color=F0DB4F
+[npm-downloads-href]: https://npmjs.com/package/fetch-result-please
+[codecov-src]: https://img.shields.io/codecov/c/gh/namesmt/fetch-result-please/main?labelColor=18181B&color=F0DB4F
+[codecov-href]: https://codecov.io/gh/namesmt/fetch-result-please
+[license-src]: https://img.shields.io/github/license/namesmt/fetch-result-please.svg?labelColor=18181B&color=F0DB4F
+[license-href]: https://github.com/namesmt/fetch-result-please/blob/main/LICENSE
+[bundlejs-src]: https://img.shields.io/bundlejs/size/fetch-result-please?labelColor=18181B&color=F0DB4F
+[bundlejs-href]: https://bundlejs.com/?q=fetch-result-please
 [jsDocs-src]: https://img.shields.io/badge/Check_out-jsDocs.io---?labelColor=18181B&color=F0DB4F
-[jsDocs-href]: https://www.jsdocs.io/package/starter-ts
+[jsDocs-href]: https://www.jsdocs.io/package/fetch-result-please
 [TypeDoc-src]: https://img.shields.io/badge/Check_out-TypeDoc---?labelColor=18181B&color=F0DB4F
-[TypeDoc-href]: https://namesmt.github.io/starter-ts/
+[TypeDoc-href]: https://namesmt.github.io/fetch-result-please/

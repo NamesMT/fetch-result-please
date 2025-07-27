@@ -1,17 +1,16 @@
 {
-  "name": "starter-ts",
+  "name": "fetch-result-please",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@10.13.1",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/namesmt",
-  "homepage": "https://github.com/namesmt/starter-ts#readme",
+  "homepage": "https://github.com/namesmt/fetch-result-please#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namesmt/starter-ts.git"
+    "url": "git+https://github.com/namesmt/fetch-result-please.git"
   },
-  "bugs": "https://github.com/namesmt/starter-ts/issues",
+  "bugs": "https://github.com/namesmt/fetch-result-please/issues",
   "sideEffects": false,
   "imports": {
     "#src/*": "./src/*"
@@ -36,16 +35,15 @@
     "test:types": "tsc --noEmit",
     "quickcheck": "pnpm run lint && pnpm run test:types",
     "check": "pnpm run lint && pnpm run test:types && vitest run --coverage",
-    "stub": "obuild --stub",
-    "build": "obuild",
+    "stub": "unbuild --stub",
+    "build": "unbuild",
     "prerelease": "pnpm run check",
     "release": "pnpm dlx changelogen@latest --release --push --publish",
     "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "consola": "^3.4.2",
-    "std-env": "^3.9.0"
+    "destr": "^2.0.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.0.0",
@@ -54,10 +52,10 @@
     "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.32.0",
     "lint-staged": "^16.1.2",
-    "obuild": "^0.2.1",
     "simple-git-hooks": "^2.13.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
+    "unbuild": "^3.6.0",
     "vitest": "^3.2.4"
   },
   "pnpm": {

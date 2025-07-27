@@ -1,11 +1,11 @@
-import type { BuildConfig } from 'obuild'
-import { defineBuildConfig } from 'obuild/config'
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: [
-    {
-      type: 'bundle',
-      input: 'src/index.ts',
-    },
+    'src/index.ts',
   ],
-}) as BuildConfig
+  declaration: 'node16',
+  rollup: {
+    inlineDependencies: true,
+  },
+}) as ReturnType<typeof defineBuildConfig>
