@@ -26,7 +26,7 @@
 
 ## Overview
 
-**fetch-result-please** helps you get a consumable result from a fetch call with a helper, and a few other features :) (feel free raise requests).
+**fetch-result-please** helps you get a consumable result from a fetch call with a helper, and a few other features :) (feel free to raise requests).
 
 Note: `fetch-result-please` focuses on being a minimal, helper function that you can just add-in to your existing fetch calls, if you're building things from scratch, it is recommended that you check out and use a proper custom fetch implementation like [`ofetch`](https://github.com/unjs/ofetch), [`ky`](https://github.com/sindresorhus/ky), [`up-fetch`](https://github.com/L-Blondy/up-fetch), etc.
 
