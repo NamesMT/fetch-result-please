@@ -31,18 +31,18 @@ describe('fast smoketests', () => {
 
   it('should throw if the response is not ok - 404', async () => {
     // Expect
-    await expect(fetchRP(fetchHttpBinWithStatus(404))).rejects.toThrowErrorMatchingInlineSnapshot(`[Error: 404 NOT FOUND]`)
+    await expect(fetchRP(fetchHttpBinWithStatus(404))).rejects.toThrowErrorMatchingInlineSnapshot(`[DetailedError: 404 NOT FOUND]`)
   })
 
   it('should throw if the response is not ok - 500', async () => {
     // Expect
-    await expect(fetchRP(fetchHttpBinWithStatus(500))).rejects.toThrowErrorMatchingInlineSnapshot(`[Error: 500 INTERNAL SERVER ERROR]`)
+    await expect(fetchRP(fetchHttpBinWithStatus(500))).rejects.toThrowErrorMatchingInlineSnapshot(`[DetailedError: 500 INTERNAL SERVER ERROR]`)
   })
 })
 
 describe('some other coverage stuff', () => {
   it('should be able to create empty fetch error', async () => {
     // Expect
-    expect(createFetchError()).toMatchInlineSnapshot(`[Error: <no response>]`)
+    expect(createFetchError()).toMatchInlineSnapshot(`[DetailedError: <no response>]`)
   })
 })
