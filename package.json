@@ -35,8 +35,7 @@
     "test:types": "tsc --noEmit",
     "quickcheck": "pnpm run lint && pnpm run test:types",
     "check": "pnpm run lint && pnpm run test:types && vitest run --coverage",
-    "stub": "unbuild --stub",
-    "build": "unbuild",
+    "build": "tsdown",
     "prerelease": "pnpm run check",
     "release": "pnpm dlx changelogen@latest --release --push --publish",
     "prepare": "simple-git-hooks",
@@ -53,9 +52,9 @@
     "eslint": "^9.32.0",
     "lint-staged": "^16.1.4",
     "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.23.0",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
-    "unbuild": "^3.6.0",
     "vitest": "^3.2.4"
   },
   "pnpm": {
