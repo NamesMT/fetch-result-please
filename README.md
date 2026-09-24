@@ -21,6 +21,7 @@
   * [Usage](#usage)
     * [Install package](#install-package)
     * [Import and use](#import-and-use)
+  * [Releasing](#releasing)
   * [Credits](#credits)
   * [License](#license)
 
@@ -63,6 +64,22 @@ const result: { id: number } = await fetchRP(fetchTodo())
 // To force a specific response type, pass in `detectResponseType`:
 const blobResult: Blob = await fetchRP(fetchTodo(), { detectResponseType: () => 'blob' })
 ```
+
+## Releasing
+
+Releases are version-first and manual. Go to **Actions → Release → Run workflow**, enter the version to ship (without a leading `v`, e.g. `0.3.0`) and run it. The workflow:
+
+1. checks the version is greater than `package.json`'s current one,
+2. installs, lints, type-checks and tests, then builds,
+3. lets [changelogen](https://github.com/unjs/changelogen) derive `CHANGELOG.md` from conventional commits, bump `package.json`, commit and tag `v<version>`,
+4. pushes the commit and tag and creates the matching GitHub release,
+5. publishes to npm with provenance via OIDC trusted publishing (no token).
+
+The `dry-run` input stops before step 4. A pushed tag publishes nothing — only a workflow run does.
+
+To preview locally, use `pnpm run release:preview`; to validate a version against `package.json`, use `pnpm run release:check 0.3.0`.
+
+One-time setup: publish the package once by hand, then on npmjs.com go to the package's **Settings → Trusted Publisher** and add this repository with the workflow filename `release.yml`.
 
 ## Credits
 
