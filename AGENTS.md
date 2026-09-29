@@ -52,4 +52,5 @@ setup (publish once by hand first) is in the README.
   fail when the network is down or those services misbehave — not because of a code change.
 - `dist/` is built, never committed, and `files` ships only it; `prepublishOnly` rebuilds, so `npm publish` builds twice.
 - The release workflow uses Node 24 for `npm publish --provenance`; the other workflows use Node 22.
+- `package.json` key order is enforced by eslint (`jsonc/sort-keys`): `description` before `author`, `homepage` before `keywords` — run `pnpm run lint` after editing it.
 - No `release` script on purpose — publishing locally would skip provenance; use the workflow.

@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.2.1",
   "packageManager": "pnpm@10.14.0",
+  "description": "Turn a fetch Response into a typed result: parse JSON, text or bytes by content type, and wrap non-ok responses in a detailed error.",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/namesmt/fetch-result-please#readme",
@@ -11,6 +12,16 @@
     "url": "git+https://github.com/namesmt/fetch-result-please.git"
   },
   "bugs": "https://github.com/namesmt/fetch-result-please/issues",
+  "keywords": [
+    "fetch",
+    "response",
+    "typescript",
+    "error-handling",
+    "http",
+    "json",
+    "esm",
+    "typed"
+  ],
   "sideEffects": false,
   "imports": {
     "#src/*": "./src/*"
