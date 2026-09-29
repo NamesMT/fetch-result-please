@@ -6,12 +6,12 @@
   "description": "Turn a fetch Response into a typed result: parse JSON, text or bytes by content type, and wrap non-ok responses in a detailed error.",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/namesmt/fetch-result-please#readme",
+  "homepage": "https://github.com/NamesMT/fetch-result-please#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namesmt/fetch-result-please.git"
+    "url": "git+https://github.com/NamesMT/fetch-result-please.git"
   },
-  "bugs": "https://github.com/namesmt/fetch-result-please/issues",
+  "bugs": "https://github.com/NamesMT/fetch-result-please/issues",
   "keywords": [
     "fetch",
     "response",
