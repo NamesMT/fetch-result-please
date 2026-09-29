@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/namesmt/fetch-result-please/compare/v0.2.1...v0.2.2)
+
+### 📖 Documentation
+
+- Add npm metadata and document the package.json key-order rule ([ff6d00d](https://github.com/namesmt/fetch-result-please/commit/ff6d00d))
+
+### 🏡 Chore
+
+- **devcontainer:** Migrate from Alpine (musl) to Arch (glibc) image ([fd558ac](https://github.com/namesmt/fetch-result-please/commit/fd558ac))
+- **devcontainer:** Bootstrap pnpm via corepack when missing ([f8852e5](https://github.com/namesmt/fetch-result-please/commit/f8852e5))
+
+### 🤖 CI
+
+- **release:** Dispatch releases by hand and add an AGENTS.md ([af26cc8](https://github.com/namesmt/fetch-result-please/commit/af26cc8))
+
+### ❤️ Contributors
+
+- NamesMT
+
 ## v0.2.1
 
 [compare changes](https://github.com/namesmt/fetch-result-please/compare/v0.2.0...v0.2.1)
