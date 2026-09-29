@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/NamesMT/fetch-result-please/compare/v0.2.2...v0.2.3)
+
+### 🩹 Fixes
+
+- Use the canonical NamesMT casing in repository URLs for provenance ([afbb666](https://github.com/NamesMT/fetch-result-please/commit/afbb666))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v0.2.2
 
 [compare changes](https://github.com/namesmt/fetch-result-please/compare/v0.2.1...v0.2.2)
