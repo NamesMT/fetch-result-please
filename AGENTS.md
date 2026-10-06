@@ -4,6 +4,20 @@
 result: `fetchRP` parses the body by content type and `createFetchError` wraps non-ok responses in a
 `DetailedError`. Node >= 22.14.0, pnpm, `#src/*` import map, tsdown build, Vitest tests.
 
+## Docs
+
+Three tiers, so a reader loads only what the task needs:
+
+1. **`AGENTS.md`** (this file) — orientation and the rules that prevent defects. Read every session.
+2. **`.agentDocs/`** — depth that would bloat this file: module rationale, traps with their causes,
+   compatibility rules. Read on demand.
+3. **`README.md` / `docs/`** — for a person using the package, not for an agent.
+
+**There is no `.agentDocs/` here yet and none is needed at this size.** Create one when a section
+above outgrows a screen or two: move the *reasoning* out and keep the *rule* here with a pointer to
+it — nobody reads a file they do not open. Each document opens with a one-line scope, and this file
+links it.
+
 ## Commands
 
 ```sh
@@ -38,20 +52,6 @@ pnpm run release:preview  # print the changelog the next release would get
 - ESM only: `"type": "module"` and an `import`-only `exports` map — do not add a CJS build.
 - Comments are sparse — explain non-obvious intent, not mechanics.
 
-## Docs
-
-Three tiers, so a reader loads only what the task needs:
-
-1. **`AGENTS.md`** (this file) — orientation and the rules that prevent defects. Read every session.
-2. **`.agentDocs/`** — depth that would bloat this file: module rationale, traps with their causes,
-   compatibility rules. Read on demand.
-3. **`README.md` / `docs/`** — for a person using the package, not for an agent.
-
-**There is no `.agentDocs/` here yet and none is needed at this size.** Create one when a section
-above outgrows a screen or two: move the *reasoning* out and keep the *rule* here with a pointer to
-it — nobody reads a file they do not open. Each document opens with a one-line scope, and this file
-links it.
-
 ## How to work here
 
 - Check who calls it before changing it; say when impact is unclear rather than guessing.
@@ -60,10 +60,10 @@ links it.
 - Report risk, not just the change: correctness, security, operational, integration.
 - **Fix the root cause, not the instance** — a copied helper, a rule stated twice, a guard bypassed by
   a second path: one implementation, one guard.
-- Verify before claiming, and say which direction you checked; a passing test pins nothing on its own.
+- **Verify before claiming, and say what you checked.** A green test proves only what it asserts — **break the thing it guards and watch it fail.** If it still passes, either the test is decoration or a different guard is running; find out which. Where a stub cannot answer the question, drive the real thing. Mark anything unverified as unverified.
 - Missing recall: read this file and `git log` first.
 
-## Conciseness (applies everywhere)
+## Conciseness
 
 Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent. One
 idea per sentence; cut what would not change what a reader does. Delete history `git log` already
