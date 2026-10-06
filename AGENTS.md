@@ -38,6 +38,28 @@ pnpm run release:preview  # print the changelog the next release would get
 - ESM only: `"type": "module"` and an `import`-only `exports` map — do not add a CJS build.
 - Comments are sparse — explain non-obvious intent, not mechanics.
 
+## How to work here
+
+- Check who calls it before changing it; say when impact is unclear rather than guessing.
+- Never overwrite or delete a large section you have not understood.
+- Do not invent requirements; surface what looks needed.
+- Report risk, not just the change: correctness, security, operational, integration.
+- **Fix the root cause, not the instance** — a copied helper, a rule stated twice, a guard bypassed by
+  a second path: one implementation, one guard.
+- Verify before claiming, and say which direction you checked; a passing test pins nothing on its own.
+- Missing recall: read this file and `git log` first.
+
+## Conciseness (applies everywhere)
+
+Prune verbose, keep correctness — code, comments, docs. A comment only for non-obvious intent. One
+idea per sentence; cut what would not change what a reader does. Delete history `git log` already
+holds — keep the rule, not the story. Never drop a caveat to save a line.
+
+## User-facing docs
+
+`README.md` alone, for a person: concise first read, depth behind `<details>`, visuals for skimmers.
+No `docs/` yet; one would follow these rules. Docs ship with the change, same commit.
+
 ## Releasing
 
 Version-first and manual: dispatch **Actions → Release → Run workflow** with the version (no leading
