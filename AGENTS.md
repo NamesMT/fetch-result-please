@@ -57,7 +57,7 @@ holds — keep the rule, not the story. Never drop a caveat to save a line.
 
 ## User-facing docs
 
-`README.md` alone, for a person: concise first read, depth behind `<details>`, visuals for skimmers.
+`README.md` alone, for a person. Keep it a **concise first read**; put depth in `<details>` spoilers and add visuals where they help.
 No `docs/` yet; one would follow these rules. Docs ship with the change, same commit.
 
 ## Releasing
